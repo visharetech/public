@@ -13,7 +13,7 @@ RUN wget -O riscv32-toolchain.tar.gz https://github.com/stnolting/riscv-gcc-preb
     rm -f riscv32-toolchain.tar.gz
 
 # Download asim
-RUN wget -O asim https://github.com/frankvisharegrp/public/releases/download/v1.0/asim && \
+RUN wget -O asim https://github.com/visharetech/public/releases/download/v1.0/asim && \
     mkdir -p /opt/asim &&   \
     cp asim /opt/asim/ &&   \
     rm -f asim
@@ -38,7 +38,7 @@ RUN touch ~/.bashrc && \
     echo 'export PATH=$PATH:/opt/riscv/bin:/opt/asim' >> ~/.bashrc
 
 # wget the asim_helloworld_example and extract to home directory
-RUN wget -O asim_helloworld_example.tar.gz https://github.com/frankvisharegrp/public/releases/download/v1.0/asim_helloworld_example.tar.gz && \
+RUN wget -O asim_helloworld_example.tar.gz https://github.com/visharetech/public/releases/download/v1.0/asim_helloworld_example.tar.gz && \
     tar -xzf asim_helloworld_example.tar.gz -C ~ && \
     rm -f asim_helloworld_example.tar.gz
 
