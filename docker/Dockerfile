@@ -21,6 +21,7 @@ RUN useradd -m -s /bin/bash vishare && \
     echo 'vishare:vishare' | chpasswd && \
     echo 'vishare ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+# Change the ownership
 RUN chown -R vishare:vishare /opt/riscv && \
     chown -R vishare:vishare /opt/asim && \
     chmod +x /opt/asim/asim
@@ -33,6 +34,11 @@ WORKDIR /home/vishare
 
 RUN touch ~/.bashrc && \
     echo 'export PATH=$PATH:/opt/riscv/bin:/opt/asim' >> ~/.bashrc
+
+# wget the asim_helloworld_example and extract to home directory
+RUN wget -O asim_helloworld_example.tar.gz https://github.com/frankvisharegrp/public/releases/download/v1.0/asim_helloworld_example.tar.gz && \
+    tar -xzf asim_helloworld_example.tar.gz -C ~ && \
+    rm -f asim_helloworld_example.tar.gz
 
 # Specify the command to run on container start
 CMD ["bash"]
