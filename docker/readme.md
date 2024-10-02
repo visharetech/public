@@ -15,6 +15,7 @@ user name: vishare<br >
 password: vishare
 
 The docker included below packages:
-* riscv32-unknown-elf cross compile toolchain
+* riscv32-unknown-elf cross-compile toolchain
 * asim
+* asim helloworld example
 
