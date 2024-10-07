@@ -10,6 +10,10 @@ docker build -t vishare .
 ### Run the Container
 ```
 docker run -it vishare
+
+# The -v option in Docker is used to create a volume mount, which allows you to share files between your host machine and a Docker container.
+# Below example demonstrates how to mount the current example directory in Windows host to the /mnt/example
+docker run -v .\example:/mnt/example -it vishare
 ```
 
 ### Docker info
